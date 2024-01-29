@@ -27,27 +27,27 @@ They had been used in the three main programs.
 ## Data formation
 <p> 
   In order to gain a high reliable nerual network, separating a signal from one experiment into several frames can be useful.
-  However, data documents of different experiments and different EVs had different length, which might occur probelms in the framing part.
-  So, a standardlized data formation process is necessary. <strong>data_formation.m</strong> is used for this purpose. 
+  However, data documents of different experiments and different EVs had different length, which might create probelms in the framing part.
+  So, a standardized data formation process is necessary. <strong>data_formation.m</strong> is used for this purpose. 
   THe total data formation process had been divided into 3 steps.
 </p>
   
 <p>
-  <strong>Step 1 Length Formation:</strong> All the siganls extraced from different documents would be tranformed into the same length.
+  <strong>Step 1 Length Formation:</strong> All the siganls extracted from different documents would be transformed into the same length.
   Also the length should be divisible by the length of the frame.
 </p>
 <p><strong>Step 2 Data Framing:</strong> As for each signal, the data strings would be cut into numbers of specific length of frames.
 </p>
-<p><strong>Step 3 Down Sampling:</strong> All the data had a high sampling rate (~100,000Hz), which made the feature/characteristics of the signal not significant enough.
-Down sampling was a method to solve this problem. As for each frame, a dwon sampling process from 100,000Hz to 500Hz was conducted.
+<p><strong>Step 3 Down Sampling:</strong> All the data had a high sampling rate (100,000 Hz), which made the feature/characteristics of the signal not significant enough.
+Down sampling was a method to solve this problem. As for each frame, a down sampling process from 100,000 Hz to 500 Hz was conducted.
 </p>
 
 ## Training
 <p>
-  In this program, the all the data would be labeled, a specific model would be constructed, and then conducted the training.
+  In this program, all the data would be labeled, a specific model would be constructed, and then the training conducted.
 </p>
-<p> The model was constructed as a classificer for time-domain signals. Number of the classes is three. The model concludes one 1D convolution layer and one 1D average-pooling layer.
-  The structure of the model was shown as below.
+<p> The model was constructed as a classifier for time-domain signals. Number of the classes is three. The model concludes one 1D convolution layer and one 1D average-pooling layer.
+  The structure of the model is shown as below.
 </p>
 <code>layers = [ ...
     sequenceInputLayer(num_Features)
@@ -78,7 +78,7 @@ miniBatchSize = 5;
 
 ## Net testing
 <p>
-  In the training program, a brief testing was conducted. However, the testing data was came from the same documents of the training data. 
+  In the training program, a brief testing was conducted. However, the testing data came from the same documents of the training data. 
   They might have some hidden relationship, which could cause a over-fit and an unreliable neural network.
   In order to avoid this issue, an extra network testing was required.
   All the testing data used for this program was obtained by program <strong>documents_separation.m</strong>. 
