@@ -1,6 +1,6 @@
 # Machine Learning Application: Different types of extracellular vesicles classification by using trapping signal.
 ## Program Information
-<p> This program was written by Matlab. There were four main programs: <strong>documents_separation.m, data_formation.m, training.m and Net_testing.m</strong>. They must be used in order.
+<p> This program was written for Matlab. There were four main programs: <strong>documents_separation.m, data_formation.m, training.m and Net_testing.m</strong>. They must be used in order.
 And the total dataset needed to be formed and saved in the same path with the main programs. 
 The program called <strong>main.m</strong> was the trigger of the whole program, which ran all the programs automatically. </p>
 
