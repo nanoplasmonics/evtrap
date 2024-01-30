@@ -2,14 +2,14 @@
 ## Program Information
 <p> This program was written for Matlab. There were four main programs: <strong>documents_separation.m, data_formation.m, training.m and Net_testing.m</strong>. They must be used in order.
 And the total dataset needed to be formed and saved in the same path with the main programs. 
-The program called <strong>main.m</strong> was the trigger of the whole program, which ran all the programs automatically. </p>
+The program called <strong>Main.m</strong> was the trigger of the whole program, which ran all the programs automatically. </p>
 
-<code>run documents_separation.m
-run data_formation.m
-run training.m
+<code>run Documents_separation.m
+run Data_formation.m
+run Training.m
 run Net_testing.m</code>
 
-<p> Programs with names <strong> channel_cancel.m, data_formation.m, data_from_dir.m, length_normalize.m, trainingPartions.m</strong> were all function programs.
+<p> Programs with names <strong> F_ChannelCancel.m, F_DataFormation.m, F_DataFrom_dir.m, F_LengthNormalize.m, F_TrainingPartions.m</strong> were all function programs.
 They had been used in the three main programs.
 
 
@@ -22,13 +22,13 @@ They had been used in the three main programs.
 ## Dataset separation
 <p> In the training part, in order to enhance the generalization ability of the network, four files of data of each EV had been selected out randomly, 
   which would be used for and extra testing. And all the other documents will be regarded as training dataset.
-<strong>documents_separation.m</strong> is used for this purpose. 
+<strong>Documents_separation.m</strong> is used for this purpose. 
 
 ## Data formation
 <p> 
   In order to gain a high reliable nerual network, separating a signal from one experiment into several frames can be useful.
   However, data documents of different experiments and different EVs had different length, which might create probelms in the framing part.
-  So, a standardized data formation process is necessary. <strong>data_formation.m</strong> is used for this purpose. 
+  So, a standardized data formation process is necessary. <strong>Data_formation.m</strong> is used for this purpose. 
   THe total data formation process had been divided into 3 steps.
 </p>
   
@@ -73,7 +73,7 @@ miniBatchSize = 5;
     Verbose=0);
 </code>
 <p> 
-  After running <strong>training.m</strong>, a figure of training process, a figure of a brief test accuracy, and the network was obtained.
+  After running <strong>Training.m</strong>, a figure of training process, a figure of a brief test accuracy, and the network was obtained.
 </p>
 
 ## Net testing
@@ -81,7 +81,7 @@ miniBatchSize = 5;
   In the training program, a brief testing was conducted. However, the testing data came from the same documents of the training data. 
   They might have some hidden relationship, which could cause a over-fit and an unreliable neural network.
   In order to avoid this issue, an extra network testing was required.
-  All the testing data used for this program was obtained by program <strong>documents_separation.m</strong>. 
+  All the testing data used for this program was obtained by program <strong>Documents_separation.m</strong>. 
   They were all selected from the total dataset randomly, and were not from the same experiments with the training data.
 </p>
 <p>
